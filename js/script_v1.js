@@ -24,6 +24,7 @@ $(document).ready(function () {
 var goods = (function () {
     var doConstruct = function () {
         main.add_init_callback(this.show_upload_img_name);
+        main.add_init_callback(this.valid_form);
     };
     doConstruct.prototype = {
         show_upload_img_name: function () {
@@ -40,19 +41,19 @@ var goods = (function () {
                     }
                 }
             });
+        },
+        valid_form: function () {
+            $('#r_form').on('submit', function(e){
+                e.preventDefault();
+                var check_file = $('#upfile').val();
+                //var selector
+                if(check_file != 0 ) {
+                    this.submit();
+                } else {
+                    alert('You need to upload a photo');
+                }
+            });
         }
     };
     return new doConstruct;
 })();
-function file_upload_validate(){
-    $('#r_look').click(function(){
-        var check_file = $('#upfile').val();
-        alert(check_file);
-        //var selector
-        if(check_file == 0 ) {
-            alert('no file select');
-            return false
-        }
-        return true;  //if all rules === true , return true and submit form
-    });
-}

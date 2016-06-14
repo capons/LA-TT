@@ -1,23 +1,11 @@
 <?php
-require_once ("config/const.php");
 session_start();
+require_once ("config/const.php");
+require_once ("Layout/header.php");
 ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Play soccer</title>
-    <link href='https://fonts.googleapis.com/css?family=Roboto:400,500,300,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
-    <link href="<?php echo base_path; ?>style/index.css" rel="stylesheet" type="text/css">
-    <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.12.2.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-    <script src="<?php echo base_path; ?>js/script_v1.js"></script>
-</head>
-<body>
+
 <div  class="auth">
-    <form onsubmit="return file_upload_validate();" action="<?php base_path; ?>controllers/registration.php" method="post" enctype="multipart/form-data">
+    <form id="r_form"  action="<?php base_path; ?>controllers/registrationController.php" method="post" enctype="multipart/form-data">
         <div class="form-i">
             <div class="f-span">
                 <span class="text-c">Name</span>
@@ -39,7 +27,7 @@ session_start();
                 <span class="text-c">Email</span>
             </div>
             <div class="f-input">
-                <input  type="email" name="email" placeholder="Email" value="ram@email.ru" required>
+                <input  type="email" name="email" placeholder="Email" value="bog@ram.ru" required>
             </div>
         </div>
         <div class="form-i">
@@ -72,6 +60,7 @@ session_start();
         </div>
 
     </form>
+
     <?php
     $info = '';
     if(isset($_SESSION['user_info'])){ ?>
@@ -81,6 +70,7 @@ session_start();
             echo '<p class="error-t">'.$info.'</p>'; ?>
         </div>
     <?php } ?>
+
 
 </div>
 </body>

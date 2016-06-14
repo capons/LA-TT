@@ -2,7 +2,7 @@
 session_start();
 require_once ("../config/const.php");
 require_once ("../config/Autoload.php");
-if(isset($_POST['r_button'])) {
+if(isset($_POST['r_name'])) {
     $user = new User();
     $check_email = $user->checkEmail($_POST['email']);
     if($check_email === true) {
@@ -26,25 +26,29 @@ if(isset($_POST['r_button'])) {
                         exit();
                     } else {
                         $_SESSION['user_info'] = 'Please try again';
-                        header('Location:' . base_path . 'registration.php');
+                        header('Location:' . base_path . 'registrationController.php');
                         exit();
                     }
                 } else {
                     $_SESSION['user_info'] = 'Invalid image format';
-                    header('Location:' . base_path . 'registration.php');
+                    header('Location:' . base_path . 'registrationController.php');
                     exit();
                 }
             }
         }
     } else {
         $_SESSION['user_info'] = 'Email already exists';
-        header('Location:' . base_path . 'registration.php');
+        header('Location:' . base_path . 'registrationController.php');
         exit();
     }
 
 } else {
-    $_SESSION['user_info'] = 'You have no access';
-    header('Location:'.base_path);
-    die();
+    exit();
 }
+
+// else {
+ //   $_SESSION['user_info'] = 'You have no access';
+ //   header('Location:'.base_path);
+ //   die();
+//}
 

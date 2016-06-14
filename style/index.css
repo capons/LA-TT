@@ -1,6 +1,46 @@
 html {
     font-family: roboto;
 }
+body {
+    margin: 0px;
+}
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+li {
+    float: left;
+}
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+.active {
+    color: rgba(40, 122, 255, 1);
+}
+ul li ul.dropdown{
+    min-width: 100%;
+    display: none;
+    position: absolute;
+    z-index: 999;
+    left: 0;
+}
+ul li:hover ul.dropdown{
+    display: block;
+}
+ul li ul.dropdown li{
+    display: block;
+}
+
+li a:hover {
+    background-color: #111;
+}
 .auth {
     display: inline-block;
     position: fixed;
@@ -71,8 +111,17 @@ input:focus, textarea:focus {
     height: 50px;
     display: table;
     background-color: bisque;
+    text-align: center;
 }
-
+#l-bottom {
+    height: 48px;
+    border: medium none;
+    background-color: inherit;
+    cursor: pointer;
+    color: white;
+    font-size: 15px;
+    font-family: roboto;
+}
 /*registration view*/
 #r_look {
     border: none;

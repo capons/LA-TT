@@ -2,10 +2,10 @@
 -- version 4.5.1
 -- http://www.phpmyadmin.net
 --
--- Хост: 127.0.0.1
--- Час створення: Чрв 13 2016 р., 22:28
--- Версія сервера: 10.1.8-MariaDB
--- Версія PHP: 5.6.14
+-- Host: 127.0.0.1
+-- Generation Time: Jun 14, 2016 at 03:56 PM
+-- Server version: 10.1.10-MariaDB
+-- PHP Version: 7.0.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -17,13 +17,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- База даних: `la-tt`
+-- Database: `la-tt`
 --
 
 -- --------------------------------------------------------
 
 --
--- Структура таблиці `image`
+-- Table structure for table `image`
 --
 
 CREATE TABLE `image` (
@@ -33,22 +33,67 @@ CREATE TABLE `image` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Дамп даних таблиці `image`
+-- Dumping data for table `image`
 --
 
 INSERT INTO `image` (`id`, `user_id`, `image_name`) VALUES
-(1, 5, 'c05ef5f1f97e31e8a9252d71b84a0df.jpg'),
-(2, 6, '.ec7a44c8f68c01fcbe5c121789b2aac.jpg'),
-(3, 9, 'pdf3f117786509f08e16d54fb33369b9.jpg'),
-(4, 10, '15c413c2529eab301b6df198ee005c5.jpg'),
-(5, 11, 'p04f1bdb4035fcc3360918648e681fcb.jpg'),
-(6, 12, 'd0de632fa603e81e7b85caeec041c10.jpg'),
-(7, 13, '9dc589be1d10caab74e640c2028c252.jpg');
+(9, 16, 'eb98efda1fe32d4438fab745158c310b.jpg'),
+(10, 17, 's1d5ad0864edad8cb411e8aa7be418b5.jpg'),
+(11, 18, 'gd26197678aa25bbac8fed824c13c0ce.jpg');
 
 -- --------------------------------------------------------
 
 --
--- Структура таблиці `user`
+-- Table structure for table `round`
+--
+
+CREATE TABLE `round` (
+  `id` int(11) NOT NULL,
+  `type` tinyint(10) NOT NULL,
+  `tournament_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `team`
+--
+
+CREATE TABLE `team` (
+  `id` int(11) NOT NULL,
+  `name` text NOT NULL,
+  `country` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tournament`
+--
+
+CREATE TABLE `tournament` (
+  `id` int(11) NOT NULL,
+  `name` text NOT NULL,
+  `type` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tournament_team`
+--
+
+CREATE TABLE `tournament_team` (
+  `id` int(11) NOT NULL,
+  `tournament_id` int(11) NOT NULL,
+  `round_id` int(11) NOT NULL,
+  `team_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `user`
 --
 
 CREATE TABLE `user` (
@@ -61,43 +106,93 @@ CREATE TABLE `user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Дамп даних таблиці `user`
+-- Dumping data for table `user`
 --
 
 INSERT INTO `user` (`id`, `name`, `s_name`, `email`, `pass`, `access`) VALUES
-(13, 'name', 's_name', 'ram@email.ru', 'e3ceb5881a0a1fdaad01296d7554868d', 1);
+(16, 'bogdan', 's_name', 'bog@ram.ru', '96e79218965eb72c92a549dd5a330112', 1),
+(17, 'name', 's_name', 'admin@ram.ru', '96e79218965eb72c92a549dd5a330112', 2),
+(18, 'name', 's_name', 'bog2222@ram.ru', 'b0baee9d279d34fa1dfd71aadb908c3f', 1);
 
 --
--- Індекси збережених таблиць
+-- Indexes for dumped tables
 --
 
 --
--- Індекси таблиці `image`
+-- Indexes for table `image`
 --
 ALTER TABLE `image`
   ADD PRIMARY KEY (`id`),
   ADD KEY `user_id` (`user_id`);
 
 --
--- Індекси таблиці `user`
+-- Indexes for table `round`
+--
+ALTER TABLE `round`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `tournament_id` (`tournament_id`);
+
+--
+-- Indexes for table `team`
+--
+ALTER TABLE `team`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `tournament`
+--
+ALTER TABLE `tournament`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `tournament_team`
+--
+ALTER TABLE `tournament_team`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `tournament_id` (`tournament_id`),
+  ADD KEY `round_id` (`round_id`),
+  ADD KEY `team_id` (`team_id`);
+
+--
+-- Indexes for table `user`
 --
 ALTER TABLE `user`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT для збережених таблиць
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT для таблиці `image`
+-- AUTO_INCREMENT for table `image`
 --
 ALTER TABLE `image`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 --
--- AUTO_INCREMENT для таблиці `user`
+-- AUTO_INCREMENT for table `round`
+--
+ALTER TABLE `round`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `team`
+--
+ALTER TABLE `team`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `tournament`
+--
+ALTER TABLE `tournament`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `tournament_team`
+--
+ALTER TABLE `tournament_team`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

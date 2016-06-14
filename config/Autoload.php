@@ -1,8 +1,10 @@
 <?php
-//require_once ("const.php");
+
 
 function __autoload($class_name) {
     $path = array(
+        './models/',
+        './config/',
         '../models/',
         '../config/'
     );
