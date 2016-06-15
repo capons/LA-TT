@@ -58,30 +58,28 @@ if(isset($_POST['tour_type'])) {
         }
     }
 }elseif(isset($_POST['check-b-b'])){
-    echo $_POST['check-b-b'];
+    $tournament_id = $_POST['check-b-b'];
     $play = new Play();
-    $all_team = $play->selectTournamentTeam($_POST['check-b-b']);
-    /*
-     * 
-     * 
-     * 
-     * ДОДЕЛАТЬ Записать все команды с которыми аграют друг с другом
-     * 
-     * 
-     * 
-    $sort_team = array();
-    $x = 0;
+    $all_team = $play->selectTournamentTeam($tournament_id);
+    $team_id = array();
+    $team_to_play = array();
     if($all_team !== false){
+        $s_x = 1;
         while ($row = $all_team->fetch_assoc()) {
-            $sort_team[] = $row['team_id'];
+            $team_id[] =  $row['team_id'];
+            $team_to_play[] ='p'.$s_x++.'='.(int)$row['team_id'];
         }
-        $sort_team[$x] = 0;
-         echo '<pre>';
-         print_r($sort_team);
-         echo '</pre>';
-    }
-    */
+        $add_play_team = $play->addPlayTeam($tournament_id,$team_id,$team_to_play);
+        if($add_play_team == true){
+            //ПРОДОЛЖАЮ
 
+
+
+
+
+            echo 'ok';
+        }
+    }
 } else {
     $_SESSION['user_info'] = 'You have no access!';
     header('Location:'.base_path.'creatTournament.php');

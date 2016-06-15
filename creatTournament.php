@@ -187,8 +187,8 @@ require_once ("./libs/admin_access.php");
                             ?>
                         </div>
                         <div class="form-full">
-                            <div style="text-align: left; margin-top: 10px" class="f-input p-cent">
-                                <button id="b_look" type="submit">Play tournament</button>
+                            <div style="text-align: center; margin-top: 10px;width: 100%" class="f-input p-cent">
+                                <button  id="b_look_t" type="submit">Play tournament</button>
                             </div>
                         </div>
                     </form>

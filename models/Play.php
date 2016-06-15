@@ -44,4 +44,18 @@ class Play extends Validation
             return false;
         }
     }
+    public function addPlayTeam($tournament_id,$team_id,$team_to_play){
+        $x = 0;
+        $p = 1;
+        foreach($team_id as $val){
+            $team_to_play[$x] = 'p'.$p.'=0';
+            $this->sql_value = implode(",", $team_to_play);
+            $team_to_play[$x] = 'p'.$p.'='.$val;
+            $x++;
+            $p++;
+            $sql = "UPDATE `play` SET $this->sql_value  WHERE team_id = $val and tournament_id = $tournament_id";
+        }
+        $query = mysqli_query(Database::connect(), $sql) or die (mysqli_error(Database::connect()));
+        return $query;
+    }
 }
