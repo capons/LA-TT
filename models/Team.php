@@ -20,11 +20,11 @@ class Team extends Validation
         die();
         */
     }
-    public function selectUser($id){
-        $sql = "SELECT * FROM user WHERE id = '$id'";
+    public function selectAllTeam(){
+        $sql = "SELECT * FROM team";
         $query = mysqli_query(Database::connect(), $sql) or die (mysqli_error(Database::connect()));
         if (mysqli_num_rows($query)>0) {
-            return mysqli_fetch_assoc($query);
+            return $query;
         } else {
             return false;
         }

@@ -8,7 +8,7 @@ require_once ("./libs/admin_access.php");
 
 ?>
 
-<div style="width: 100%;position: relative;margin-top: 30px">
+<div class="c-full-w b-top">
     <div style="position: relative;width: 49%;display: inline-block;">
         <div class="c-t-full-w">
             <div class="c-t-head">
@@ -67,12 +67,14 @@ require_once ("./libs/admin_access.php");
                                 <?php
                                 $round = new Round();
                                 $tournament_round = $round->selectRound();
-                                while($row = $tournament_round->fetch_assoc()) {
-                                    echo $row['type'];
+                                if(!empty($tournament_round)) {
+                                    while ($row = $tournament_round->fetch_assoc()) {
+                                        echo $row['type'];
 
-                                    ?>
-                                    <option value="<?php echo $row['id']; ?>"><?php echo $row['type']; ?></option>
-                                    <?php
+                                        ?>
+                                        <option value="<?php echo $row['id']; ?>"><?php echo $row['type']; ?></option>
+                                        <?php
+                                    }
                                 }
                                 ?>
                             </select>
@@ -99,6 +101,105 @@ require_once ("./libs/admin_access.php");
                 </form>
             </div>
         </div>
+    </div>
+</div>
+
+<div  class="c-full-w b-top">
+    <div class="half-center">
+        <?php
+        $tournament = new Tournament();
+        $check_tournament = $tournament->selectTournametn();
+        if($check_tournament !==false) {
+            ?>
+
+            <div class="c-t-head">
+                <p>Add participants to the tournament</p>
+            </div>
+            <form action="<?php base_path ?>controllers/creatTournamentController.php" method="post">
+                <div class="form-full">
+                    <div class="f-span-top">
+                        <span class="text-c">Teams to participate in the tournament (need to be 16)</span>
+                    </div>
+                    <?php
+                    $team = new Team();
+                    $all_team = $team->selectAllTeam();
+                    while ($row = $all_team->fetch_assoc()) {
+                        ?>
+                        <div class="t-c-b">
+                            <input type="checkbox" checked name="check-b-<?php echo $row['id']; ?>" value="<?php echo $row['id']; ?>" placeholder="Name"><span style="margin-left: 3px"><?php echo $row['name'] ?></span>
+                        </div>
+                        <?php
+                    }
+                    ?>
+                </div>
+                <div class="form-full">
+                    <div class="f-span-top">
+                        <span class="text-c">Team country</span>
+                    </div>
+                    <div class="f-input-f">
+                        <select name="tour_type_j" style="width: 145px;" required>
+                            <option></option>
+                            <?php
+                            $tournament = new Tournament();
+                            $tournament_all = $tournament->selectTournametn();
+                            if (!empty($tournament_all)) {
+                                while ($row = $tournament_all->fetch_assoc()) {
+                                    ?>
+                                    <option value="<?php echo $row['id']; ?>"><?php echo $row['name']; ?></option>
+                                    <?php
+                                }
+                            }
+                            ?>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-full">
+
+                    <div style="text-align: left; margin-top: 10px" class="f-input p-cent">
+                        <button id="b_look" type="submit">Add</button>
+                    </div>
+                </div>
+
+            </form>
+            
+            
+            <div  class="c-full-w">
+                <div class="half-center">
+                    <form action="<?php base_path ?>controllers/creatTournamentController.php" method="post">
+                        <div class="form-full">
+                            <div class="f-span-top">
+                                <span class="text-c">Choose a tournament and start the game</span>
+                            </div>
+
+                            <?php
+                            $tournament_all_p = $tournament->selectTournametn();
+                            if (!empty($tournament_all_p)) {
+                                while ($row = $tournament_all_p->fetch_assoc()) {
+                                    ?>
+                                    <div class="t-c-b-b">
+                                        <input type="radio" name="check-b-b" value="<?php echo $row['id']; ?>" required placeholder="Name"><span style="margin-left: 3px"><?php echo $row['name'] ?></span>
+                                    </div>
+
+                                    <?php
+                                }
+                            }
+                            ?>
+                        </div>
+                        <div class="form-full">
+                            <div style="text-align: left; margin-top: 10px" class="f-input p-cent">
+                                <button id="b_look" type="submit">Play tournament</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <?php
+        } else {
+            echo '<p style="text-align: center">'.'No available tournaments'.'</p>';
+        }
+
+        ?>
     </div>
 </div>
 

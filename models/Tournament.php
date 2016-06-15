@@ -18,11 +18,11 @@ class Tournament extends Validation
         die();
         */
     }
-    public function selectUser($id){
-        $sql = "SELECT * FROM user WHERE id = '$id'";
+    public function selectTournametn(){
+        $sql = "SELECT * FROM tournament";
         $query = mysqli_query(Database::connect(), $sql) or die (mysqli_error(Database::connect()));
         if (mysqli_num_rows($query)>0) {
-            return mysqli_fetch_assoc($query);
+            return $query;
         } else {
             return false;
         }
