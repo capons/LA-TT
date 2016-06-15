@@ -3,7 +3,7 @@ session_start();
 require_once ("config/const.php");
 require_once ("./libs/vkAuth.php");
 require_once ("./config/Autoload.php");
-//require_once ("./libs/access.php");
+//require_once ("./libs/admin_access.php");
 require_once ("./Layout/header.php");
 
 ?>

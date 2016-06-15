@@ -165,3 +165,38 @@ input:focus, textarea:focus {
     bottom: 12px;
 }
 /* ./registration view*/
+/* creatTournament*/
+.c-t-full-w {
+    position: relative;
+    width: 100%;
+    margin-top: 50px;
+}
+.c-t-head {
+    position: relative;
+    width: 50%;
+    margin: 0 auto;
+    margin-bottom: 30px;
+    text-align: center;
+}
+.half-center {
+    position: relative;
+    width: 50%;
+    margin: 0 auto;
+}
+.form-full {
+    display: block;
+    width: 100%;
+    margin: 0 auto;
+    margin-bottom: 10px;
+}
+.f-span-f {
+    display: inline-block;
+    width: 50%;
+    text-align: right;
+}
+.f-input-f {
+    display: inline-block;
+    width: 49%;
+    text-align: left;
+}
+/* ./creatTournament*/
