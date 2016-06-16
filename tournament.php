@@ -4,6 +4,8 @@ require_once ("config/const.php");
 require_once ("./libs/vkAuth.php");
 require_once ("./config/Autoload.php");
 require_once ("./Layout/header.php");
+require_once ("./libs/admin_access.php");
+/*
 if(isset($_SESSION['user_data'])){
      $auth = new Auth();
      $auth->authAdmin($_SESSION['user_data']['id']);
@@ -12,6 +14,7 @@ if(isset($_SESSION['user_data'])){
     header('Location:'.base_path);
     die();
 }
+*/
 ?>
 
 <div style="position: relative;width: 100%;margin-top: 50px">

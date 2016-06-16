@@ -26,6 +26,7 @@ class Play extends Validation
             return true;
         }
     }
+    /*
     public function selectAllTeam(){
         $sql = "SELECT * FROM team";
         $query = mysqli_query(Database::connect(), $sql) or die (mysqli_error(Database::connect()));
@@ -35,6 +36,7 @@ class Play extends Validation
             return false;
         }
     }
+    */
     public function selectTournamentTeam($id){
         $sql = "SELECT id,team_id FROM play WHERE tournament_id = $id";
         $query = mysqli_query(Database::connect(), $sql) or die (mysqli_error(Database::connect()));
@@ -47,6 +49,7 @@ class Play extends Validation
     public function addPlayTeam($tournament_id,$team_id,$team_to_play){
         $x = 0;
         $p = 1;
+        $result = array();
         foreach($team_id as $val){
             $team_to_play[$x] = 'p'.$p.'=0';
             $this->sql_value = implode(",", $team_to_play);
@@ -54,8 +57,90 @@ class Play extends Validation
             $x++;
             $p++;
             $sql = "UPDATE `play` SET $this->sql_value  WHERE team_id = $val and tournament_id = $tournament_id";
+            $query = mysqli_query(Database::connect(), $sql) or die (mysqli_error(Database::connect()));
+            $result[] = $query;
         }
+        return $result;
+    }
+    public function selectAllPLayTeam($tournament_id){
+        $sql = "SELECT * FROM play WHERE tournament_id = $tournament_id";
         $query = mysqli_query(Database::connect(), $sql) or die (mysqli_error(Database::connect()));
-        return $query;
+        if (mysqli_num_rows($query)>0) {
+            return $query;
+        } else {
+            return false;
+        }
+    }
+    public function orderPlay($array){
+        $result = array();
+        $t = 0;
+        $t_play_one_id = '';
+        $first_team ='';
+        while ($row = $array->fetch_assoc()) {
+            $all_games = array();
+            $t_play_one_id = $row['id'];
+
+            $first_team = $row['team_id'];
+            unset($row['team_id']);
+            unset($row['id']);
+            unset($row['tournament_id']);
+            // shuffle($row); //random sort array
+            $clear_array = array_filter($row); //clear empty slot
+
+
+            foreach ($clear_array as $key=>$val){
+                $all_games[][] = $first_team;
+                $all_games[$t][] = $val;
+                $t++;
+            }
+
+            // $winner = ''; //winner
+            foreach ($all_games as $val) {
+                //$a = '';      //team a
+                //$b = '';      //team b
+                $score = '';  //play score
+
+
+                foreach ($val as $key => $t_val) {
+                    switch ($key) {
+                        case 0:
+                            $a = (int)$t_val;
+                            break;
+                        case 1:
+                            $b =(int)$t_val;
+                            break;
+                    }
+                    //generates the result of the match
+                    $scor_a = rand(0, 5);
+                    $scor_b = rand(0, 5);
+                    $score = $scor_a . ':' . $scor_b;
+                }
+                $data_to_save = array();
+
+                $data_to_save[] = (int)$t_play_one_id;
+                $data_to_save[] = (int)$a;
+                $data_to_save[] = (int)$b;
+                $data_to_save[] = '\''.$score.'\'';
+                $str_result = (explode(':',$score));
+
+                if($str_result[0] > $str_result[1]){
+                    $data_to_save[] = (int)$a; //the order of the winner
+                    $data_to_save[] = (int)$b; //the order of the loser
+                } elseif($str_result[0] < $str_result[1]){
+                    $data_to_save[] = (int)$b; //the order of the winner
+                    $data_to_save[] = (int)$a; //the order of the loser
+                } elseif($str_result[0] == $str_result[1]){
+                    $data_to_save[] = '\'drow\'';
+                    $data_to_save[] = '\'drow\'';
+                }
+
+                $sql_str = implode(',', $data_to_save);
+                
+                $sql = "INSERT INTO `order play`(play_id,a,b,score,winner,loser) VALUES ($sql_str)";
+                $query = mysqli_query(Database::connect(), $sql) or die (mysqli_error(Database::connect()));
+                $result[] = $query;
+            }
+        }
+        return $result;
     }
 }
