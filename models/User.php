@@ -84,5 +84,24 @@ class User extends Validation
             return false;
         }
     }
+    public function selectAllUser(){
+        $sql = "SELECT * FROM user";
+        $query = mysqli_query(Database::connect(), $sql) or die (mysqli_error(Database::connect()));
+        if (mysqli_num_rows($query)>0) {
+            return $query;
+        } else {
+            return false;
+        }
+    }
+    public function teamTournament($sql){ // users who are in the tournament or free user from tournament
+        $sql_query = "INSERT INTO user (id,is_play) VALUES $sql ON DUPLICATE KEY UPDATE is_play=VALUES(is_play)";
+        $query = mysqli_query(Database::connect(), $sql_query) or die (mysqli_error(Database::connect()));
+        return $query;
+    }
+    public function teamScore($sql){ // users who are in the tournament or free user from tournament
+        $sql_query = "INSERT INTO user (id,score) VALUES $sql ON DUPLICATE KEY UPDATE id=VALUES(id)";
+        $query = mysqli_query(Database::connect(), $sql_query) or die (mysqli_error(Database::connect()));
+        return $query;
+    }
     
 }

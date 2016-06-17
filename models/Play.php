@@ -26,17 +26,6 @@ class Play extends Validation
             return true;
         }
     }
-    /*
-    public function selectAllTeam(){
-        $sql = "SELECT * FROM team";
-        $query = mysqli_query(Database::connect(), $sql) or die (mysqli_error(Database::connect()));
-        if (mysqli_num_rows($query)>0) {
-            return $query;
-        } else {
-            return false;
-        }
-    }
-    */
     public function selectTournamentTeam($id){
         $sql = "SELECT id,team_id FROM play WHERE tournament_id = $id";
         $query = mysqli_query(Database::connect(), $sql) or die (mysqli_error(Database::connect()));
@@ -71,36 +60,37 @@ class Play extends Validation
             return false;
         }
     }
+    public function tournamentTeam($tournament_id){
+        $sql = "SELECT team_id FROM play WHERE tournament_id = $tournament_id";
+        $query = mysqli_query(Database::connect(), $sql) or die (mysqli_error(Database::connect()));
+        if (mysqli_num_rows($query)>0) {
+            return $query;
+        } else {
+            return false;
+        }
+    }
     public function orderPlay($array){
         $result = array();
         $t = 0;
         $t_play_one_id = '';
         $first_team ='';
+        $final_sql_data = array();
         while ($row = $array->fetch_assoc()) {
             $all_games = array();
             $t_play_one_id = $row['id'];
-
             $first_team = $row['team_id'];
+            $tournament_id = $row['tournament_id'];
             unset($row['team_id']);
             unset($row['id']);
             unset($row['tournament_id']);
-            // shuffle($row); //random sort array
             $clear_array = array_filter($row); //clear empty slot
-
-
             foreach ($clear_array as $key=>$val){
                 $all_games[][] = $first_team;
                 $all_games[$t][] = $val;
                 $t++;
             }
-
-            // $winner = ''; //winner
             foreach ($all_games as $val) {
-                //$a = '';      //team a
-                //$b = '';      //team b
                 $score = '';  //play score
-
-
                 foreach ($val as $key => $t_val) {
                     switch ($key) {
                         case 0:
@@ -122,25 +112,38 @@ class Play extends Validation
                 $data_to_save[] = (int)$b;
                 $data_to_save[] = '\''.$score.'\'';
                 $str_result = (explode(':',$score));
-
                 if($str_result[0] > $str_result[1]){
                     $data_to_save[] = (int)$a; //the order of the winner
                     $data_to_save[] = (int)$b; //the order of the loser
+                    $data_to_save[] = (int)$tournament_id;
                 } elseif($str_result[0] < $str_result[1]){
                     $data_to_save[] = (int)$b; //the order of the winner
                     $data_to_save[] = (int)$a; //the order of the loser
+                    $data_to_save[] = (int)$tournament_id;
                 } elseif($str_result[0] == $str_result[1]){
                     $data_to_save[] = '\'drow\'';
                     $data_to_save[] = '\'drow\'';
+                    $data_to_save[] = (int)$tournament_id;
                 }
-
                 $sql_str = implode(',', $data_to_save);
-                
-                $sql = "INSERT INTO `order play`(play_id,a,b,score,winner,loser) VALUES ($sql_str)";
-                $query = mysqli_query(Database::connect(), $sql) or die (mysqli_error(Database::connect()));
-                $result[] = $query;
+                $u_sql_str = '('.$sql_str.')';
+                $final_sql_data[] = $u_sql_str;
+               // echo $u_sql_str;
+               // die();
+               // $sql = "INSERT INTO `order play`(play_id,a,b,score,winner,loser) VALUES ($sql_str)";
+               // $query = mysqli_query(Database::connect(), $sql) or die (mysqli_error(Database::connect()));
+               // $result[] = $query;
             }
         }
-        return $result;
+        $final_sql = implode(',', $final_sql_data);
+        $sql = "INSERT INTO `order play`(play_id,a,b,score,winner,loser,tournament_id) VALUES $final_sql";
+        $query = mysqli_query(Database::connect(), $sql) or die (mysqli_error(Database::connect()));
+        return $query;
+    }
+    public function playScore($tournament_id){
+
+        $sql = "SELECT winner,count(*) as win_number FROM `order play` where winner <> 'drow' and loser <> 'drow' and tournament_id = $tournament_id GROUP BY winner";
+        $query = mysqli_query(Database::connect(), $sql) or die (mysqli_error(Database::connect()));
+        return $query;
     }
 }

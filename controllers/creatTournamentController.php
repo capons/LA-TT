@@ -35,24 +35,57 @@ if(isset($_POST['tour_type'])) {
         die();
     } else {
 
+
+
         $tournament_id = $_POST['tour_type_j'];
         unset($_POST['tour_type_j']);
-        $play = new Play();
-        $check_tournament = $play->checkTournamentTeam($tournament_id);
-        if ($check_tournament == true) {
-            $add_team_tournament = $play->teamRegist($_POST, $tournament_id);
-            //print_r($add_team_tournament);
-            if ($add_team_tournament == true) {
-                $_SESSION['user_info'] = 'Successfully add teams in the tournament';
-                header('Location:' . base_path . 'creatTournament.php');
-                die();
+        $tournament = new Tournament();
+        $tournament_is_full = $tournament->tournamentFull($tournament_id);
+        if($tournament_is_full == false) {
+            $play = new Play();
+            $check_tournament = $play->checkTournamentTeam($tournament_id);
+            if ($check_tournament == true) {
+                $team_id = array(); // push all team id to check -> if team in tournament or no
+                foreach ($_POST as $val) {
+                    $team_id[] = '(' . $val . ',' . '1' . ')';
+                }
+                $sql_data = implode(',', $team_id); //array to check if team in tournament or no
+                $user = new User();
+                $update_team_play_status = $user->teamTournament($sql_data);
+                if ($update_team_play_status == true) {
+                    $add_team_tournament = $play->teamRegist($_POST, $tournament_id);
+                    //print_r($add_team_tournament);
+                    if ($add_team_tournament == true) {
+                        //$tournament = new Tournament();
+                        $tournament_full = $tournament->tournamentTeamStatus($tournament_id);
+                        if ($tournament_full == true) {
+                            $_SESSION['user_info'] = 'Successfully add teams in the tournament';
+                            header('Location:' . base_path . 'creatTournament.php');
+                            die();
+                        } else {
+                            $_SESSION['user_info'] = 'Error please try again';
+                            header('Location:' . base_path . 'creatTournament.php');
+                            die();
+                        }
+
+
+                    } else {
+                        $_SESSION['user_info'] = 'Error please try again';
+                        header('Location:' . base_path . 'creatTournament.php');
+                        die();
+                    }
+                } else {
+                    $_SESSION['user_info'] = 'Error please try again';
+                    header('Location:' . base_path . 'creatTournament.php');
+                    die();
+                }
             } else {
-                $_SESSION['user_info'] = 'Error please try again';
+                $_SESSION['user_info'] = 'The tournament is already filled';
                 header('Location:' . base_path . 'creatTournament.php');
                 die();
             }
         } else {
-            $_SESSION['user_info'] = 'The tournament is already filled';
+            $_SESSION['user_info'] = 'The tournament is already full';
             header('Location:' . base_path . 'creatTournament.php');
             die();
         }
@@ -81,13 +114,75 @@ if(isset($_POST['tour_type'])) {
                 if ($update_tournament_status == true) {
                     $all_tournament_play_team = $play->selectAllPLayTeam($tournament_id);
                     if($all_tournament_play_team !== false) {
-
-
                         $order_play = $play->orderPlay($all_tournament_play_team);
-                        if(!in_array(false,$order_play)){
-                            $_SESSION['user_info'] = 'The tournament is over! LOOK AT THE RESULTS!';
-                            header('Location:' . base_path . 'creatTournament.php');
-                            die();
+                        if($order_play !== false){
+                            $end_tournament_status = $tournament->updateTournament($tournament_id,'end');
+                            if($end_tournament_status == true) {
+                                //$team = new Play();
+
+
+                                $tournament_team = $play->tournamentTeam($tournament_id);
+                                if($tournament_team == true){ //free team status -> team can play again
+                                    $t_team = array();
+                                    while ($row = $tournament_team->fetch_assoc()){
+                                        $t_team[] = '(' . $row['team_id'] . ',' . '0' . ')';
+                                    }
+                                    $sql_data = implode(',', $t_team);
+                                    $user = new User();
+                                    $free_team = $user->teamTournament($sql_data);
+                                    if($free_team == true) {
+
+                                        $team_score = $play->playScore($tournament_id);
+                                        if($team_score == true){
+                                            $n_team_score = array();
+                                            while ($row = $team_score->fetch_assoc()){
+                                                $n_team_score[] = '(' . $row['winner'] . ',' . 3*$row['win_number'] . ')';
+                                            }
+                                            echo '<pre>';
+                                            //print_r($n_team_score);
+                                            echo '</pre>';
+                                            //die();
+                                            $score_sql_data = implode(',', $t_team);
+                                            $score = $user->teamScore($score_sql_data);
+                                            if($score == true){
+                                                echo 'ok';
+                                            }
+
+
+                                            //ПРОДОЛЖИТЬ
+
+
+
+
+
+
+
+                                        }else {
+                                            $_SESSION['user_info'] = 'Error please try again!';
+                                            header('Location:' . base_path . 'creatTournament.php');
+                                            die();
+                                        }
+
+
+
+                                        $_SESSION['user_info'] = 'The tournament is over! LOOK AT THE RESULTS!';
+                                        header('Location:' . base_path . 'creatTournament.php');
+                                        die();
+                                    } else {
+                                        $_SESSION['user_info'] = 'Error please try again!';
+                                        header('Location:' . base_path . 'creatTournament.php');
+                                        die();
+                                    }
+                                } else {
+                                    $_SESSION['user_info'] = 'Error please try again!';
+                                    header('Location:' . base_path . 'creatTournament.php');
+                                    die();
+                                }
+                            } else {
+                                $_SESSION['user_info'] = 'Error please try again!';
+                                header('Location:' . base_path . 'creatTournament.php');
+                                die();
+                            }
                         }else {
                             $_SESSION['user_info'] = 'Error please try again!';
                             header('Location:' . base_path . 'creatTournament.php');
@@ -192,7 +287,15 @@ if(isset($_POST['tour_type'])) {
                 header('Location:' . base_path . 'creatTournament.php');
                 die();
             }
+        } else {
+            $_SESSION['user_info'] = 'Add team to the tournament!';
+            header('Location:' . base_path . 'creatTournament.php');
+            die();
         }
+    }elseif($check_tournament['status'] == 'end'){
+        $_SESSION['user_info'] = 'The tournament ended!';
+        header('Location:' . base_path . 'creatTournament.php');
+        die();
     } else {
         $_SESSION['user_info'] = 'The tournament has started!';
         header('Location:' . base_path . 'creatTournament.php');

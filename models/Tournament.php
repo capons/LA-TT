@@ -36,7 +36,7 @@ class Tournament extends Validation
             return false;
         }
     }
-    public function selectTournametnPLayoff(){
+    public function selectTournametnPlayoff(){
         $sql = "SELECT * FROM tournament WHERE round_id = 2";
         $query = mysqli_query(Database::connect(), $sql) or die (mysqli_error(Database::connect()));
         if (mysqli_num_rows($query)>0) {
@@ -58,5 +58,19 @@ class Tournament extends Validation
         $sql = "UPDATE `tournament` SET status='$status'  WHERE id = $tournament_id";
         $query = mysqli_query(Database::connect(), $sql) or die (mysqli_error(Database::connect()));
         return $query;
+    }
+    public function tournamentTeamStatus($tournament_id){
+        $sql = "UPDATE tournament SET team = 1 WHERE id = $tournament_id";
+        $query = mysqli_query(Database::connect(), $sql) or die (mysqli_error(Database::connect()));
+        return $query;
+    }
+    public  function tournamentFull($tournament_id){
+        $sql = "SELECT * FROM tournament WHERE id = $tournament_id and team = 1";
+        $query = mysqli_query(Database::connect(), $sql) or die (mysqli_error(Database::connect()));
+        if (mysqli_num_rows($query)>0) {
+            return true;
+        } else {
+            return false;
+        }
     }
 }

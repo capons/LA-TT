@@ -26,23 +26,24 @@ if(isset($_POST['r_name'])) {
                         exit();
                     } else {
                         $_SESSION['user_info'] = 'Please try again';
-                        header('Location:' . base_path . 'registrationController.php');
+                        header('Location:' . base_path . 'registration.php');
                         exit();
                     }
                 } else {
                     $_SESSION['user_info'] = 'Invalid image format';
-                    header('Location:' . base_path . 'registrationController.php');
+                    header('Location:' . base_path . 'registration.php');
                     exit();
                 }
             }
         }
     } else {
         $_SESSION['user_info'] = 'Email already exists';
-        header('Location:' . base_path . 'registrationController.php');
+        header('Location:' . base_path . 'registration.php');
         exit();
     }
 
 } else {
+    header('Location:' . base_path . 'registration.php');
     exit();
 }
 

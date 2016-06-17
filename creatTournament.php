@@ -9,6 +9,7 @@ require_once ("./libs/admin_access.php");
 ?>
 
 <div class="c-full-w b-top">
+    <!--
     <div style="position: relative;width: 49%;display: inline-block;">
         <div class="c-t-full-w">
             <div class="c-t-head">
@@ -17,7 +18,7 @@ require_once ("./libs/admin_access.php");
         </div>
         <div class="c-t-full-w">
             <div>
-                <form action="<?php base_path ?>controllers/creatTournamentController.php" method="post">
+                <form action="<?php// base_path ?>controllers/creatTournamentController.php" method="post">
                     <div class="form-full">
                         <div class="f-span-f">
                             <span class="text-c">Team name</span>
@@ -48,6 +49,7 @@ require_once ("./libs/admin_access.php");
             </div>
         </div>
     </div>
+    -->
     <div style="position: relative;width: 50%;display: inline-block;">
         <div class="c-t-full-w">
             <div class="c-t-head">
@@ -109,9 +111,16 @@ require_once ("./libs/admin_access.php");
 
 </div>
 
-<div style="width: 100%">
-    <div  class="half tour-block">
 
+
+
+
+
+
+<div style="width: 100%;float: left">
+
+    <div style="float:left;width: 50%;min-height: 500px;">
+        <div  style="padding: 5px">
         <?php
         $tournament = new Tournament();
         $check_tournament = $tournament->selectTournametnTable();
@@ -122,24 +131,24 @@ require_once ("./libs/admin_access.php");
                 <p>Add participants to the tournament (Tournament table)</p>
             </div>
             <form action="<?php base_path ?>controllers/creatTournamentController.php" method="post">
-                <div style="padding: 5px" class="form-full">
+                <div class="form-full">
                     <div style="text-align: center" class="f-span-top">
                         <span class="text-c">Teams to participate in the tournament (need to be 16)</span>
                     </div>
 
                     <?php
-                    $team = new Team();
-                    $all_team = $team->selectAllTeam();
+                    $team = new User();
+                    $all_team = $team->selectAllUser();
                     while ($row = $all_team->fetch_assoc()) {
                         ?>
                         <div class="t-c-b">
-                            <input type="checkbox" checked name="check-b-<?php echo $row['id']; ?>" value="<?php echo $row['id']; ?>" placeholder="Name"><span style="margin-left: 3px"><?php echo $row['name'] ?></span>
+                            <input type="checkbox" checked name="check-b-<?php echo $row['id']; ?>" value="<?php echo $row['id']; ?>" placeholder="Name"><span style="margin-left: 3px"><?php echo ucfirst($row['name']).' '.strtoupper(mb_substr($row['s_name'],0,1)).'.'; ?></span>
                         </div>
                         <?php
                     }
                     ?>
                 </div>
-                <div style="padding: 5px" class="form-full">
+                <div class="form-full">
                     <div class="f-span-top">
                         <span class="text-c">Select tournament</span>
                     </div>
@@ -185,7 +194,7 @@ require_once ("./libs/admin_access.php");
                                 while ($row = $tournament_all_p->fetch_assoc()) {
                                     ?>
                                     <div class="t-c-b-b">
-                                        <input type="radio" name="check-b-b" value="<?php echo $row['id']; ?>" required placeholder="Name"><span style="margin-left: 3px"><?php echo $row['name'] ?></span>
+                                        <input type="checkbox" checked name="check-b-b" value="<?php echo $row['id']; ?>" placeholder="Name"><span style="margin-left: 3px"><?php echo ucfirst($row['name']); ?></span>
                                     </div>
 
                                     <?php
@@ -207,27 +216,31 @@ require_once ("./libs/admin_access.php");
         }
 
         ?>
+        </div>
 
     </div>
-    <div  class="half l-border tour-block">
+
+    <div style="float:right;width: 50%;min-height: 500px;">
+        <div class="l-border" style="padding: 5px;min-height: 490px">
         <?php
         $tournament = new Tournament();
-        $check_tournament = $tournament->selectTournametnPLayoff();
-        if($check_tournament ==false) {
+        $check_tournament = $tournament->selectTournametnPlayoff();
+        if(!empty($check_tournament)) {
             ?>
 
             <div class="c-t-head-t">
                 <p>Add participants to the tournament (PLayoff)</p>
             </div>
             <form action="<?php base_path ?>controllers/creatTournamentController.php" method="post">
-                <div style="padding: 5px" class="form-full">
+                <div class="form-full">
                     <div style="text-align: center" class="f-span-top">
                         <span class="text-c">Teams to participate in the tournament (need to be 8)</span>
                     </div>
 
                     <?php
-                    $team = new Team();
-                    $all_team = $team->selectAllTeam();
+                    //$team = new Team();
+                    $team = new User();
+                    $all_team = $team->selectAllUser();
                     while ($row = $all_team->fetch_assoc()) {
                         ?>
                         <div class="t-c-b">
@@ -237,7 +250,7 @@ require_once ("./libs/admin_access.php");
                     }
                     ?>
                 </div>
-                <div style="padding: 5px" class="form-full">
+                <div  class="form-full">
                     <div class="f-span-top">
                         <span class="text-c">Select tournament</span>
                     </div>
@@ -246,7 +259,8 @@ require_once ("./libs/admin_access.php");
                             <option></option>
                             <?php
                             $tournament = new Tournament();
-                            $tournament_all = $tournament->selectTournametnPLayoff();
+                            $tournament_all = $tournament->selectTournametnPlayoff();
+
                             if (!empty($tournament_all)) {
                                 while ($row = $tournament_all->fetch_assoc()) {
                                     ?>
@@ -278,7 +292,9 @@ require_once ("./libs/admin_access.php");
                             </div>
 
                             <?php
-                            $tournament_all_p = $tournament->selectTournametnPLayoff();
+                            $tournament_all_p = $tournament->selectTournametnPlayoff();
+                            //print_r($tournament_all_p);
+                            //die();
                             if (!empty($tournament_all_p)) {
                                 while ($row = $tournament_all_p->fetch_assoc()) {
                                     ?>
@@ -307,9 +323,15 @@ require_once ("./libs/admin_access.php");
         }
 
         ?>
+        </div>
+
+    </div>
+    <div class="t-border" style="width: 100%;float: left;height: 2px">
 
     </div>
 </div>
+
+
 
 
 

@@ -2,17 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d42c9adf-f75a-43ee-871f-c73a3b16a7c9" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/models/Comments.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/models/CommentsComments.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/models/Message.php" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DATABASE DUMP/new/la-tt.sql" afterPath="$PROJECT_DIR$/DATABASE DUMP/new/la-tt.sql" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controllers/creatTournamentController.php" afterPath="$PROJECT_DIR$/controllers/creatTournamentController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controllers/registrationController.php" afterPath="$PROJECT_DIR$/controllers/registrationController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/creatTournament.php" afterPath="$PROJECT_DIR$/creatTournament.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/models/Play.php" afterPath="$PROJECT_DIR$/models/Play.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/models/Tournament.php" afterPath="$PROJECT_DIR$/models/Tournament.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/models/User.php" afterPath="$PROJECT_DIR$/models/User.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/registration.php" afterPath="$PROJECT_DIR$/registration.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/style/index.css" afterPath="$PROJECT_DIR$/style/index.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tournament.php" afterPath="$PROJECT_DIR$/tournament.php" />
     </list>
     <ignored path="LA-TT.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -34,32 +32,61 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="creatTournament.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="creatTournament.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/creatTournament.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="192">
-              <caret line="182" column="84" selection-start-line="182" selection-start-column="84" selection-end-line="182" selection-end-column="84" />
+            <state relative-caret-position="458">
+              <caret line="241" column="39" selection-start-line="241" selection-start-column="39" selection-end-line="241" selection-end-column="39" />
               <folding>
                 <element signature="n#style#0;n#div#2;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#form#0;n#div#0;n#div#2;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#0;n#form#0;n#div#0;n#div#2;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#1;n#form#0;n#div#0;n#div#2;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#form#0;n#div#1;n#div#2;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#0;n#form#0;n#div#1;n#div#2;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#1;n#form#0;n#div#1;n#div#2;n#!!top" expanded="true" />
-                <marker date="1466085071561" expanded="true" signature="8527:8545" placeholder="..." />
-                <marker date="1466085071561" expanded="true" signature="13069:13087" placeholder="..." />
+                <element signature="n#style#0;n#div#0;n#div#2;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#2;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#form#0;n#div#0;n#div#0;n#div#2;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#2;n#form#0;n#div#0;n#div#0;n#div#2;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#div#1;n#div#0;n#form#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#2;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#div#2;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#1;n#div#2;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#select#0;n#div#1;n#div#1;n#form#0;n#div#0;n#div#1;n#div#2;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#1;n#form#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#2;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#2;n#div#2;n#!!top" expanded="true" />
+                <marker date="1466158003750" expanded="false" signature="1563:1582" placeholder="..." />
+                <marker date="1466158003750" expanded="true" signature="8654:8672" placeholder="..." />
+                <marker date="1466158003750" expanded="true" signature="13395:13413" placeholder="..." />
+                <marker date="1466158003750" expanded="true" signature="13683:13717" placeholder="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="creatTournamentController.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="creatTournamentController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/controllers/creatTournamentController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="274">
-              <caret line="66" column="54" selection-start-line="66" selection-start-column="54" selection-end-line="66" selection-end-column="54" />
+            <state relative-caret-position="631">
+              <caret line="166" column="0" selection-start-line="166" selection-start-column="0" selection-end-line="166" selection-end-column="0" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="User.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/models/User.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="461">
+              <caret line="100" column="66" selection-start-line="100" selection-start-column="66" selection-end-line="100" selection-end-column="66" />
+              <folding>
+                <marker date="1466171680144" expanded="true" signature="511:645" placeholder="INSERT into user... " />
+                <marker date="1466171680144" expanded="true" signature="984:1062" placeholder="INSERT into image... " />
+                <marker date="1466171680144" expanded="true" signature="1354:1401" placeholder="SELECT * FRO... user" />
+                <marker date="1466171680144" expanded="true" signature="1782:1957" placeholder="SELECT user.... user" />
+                <marker date="1466171680144" expanded="true" signature="2261:2296" placeholder="SELECT * FRO... user" />
+                <marker date="1466171680144" expanded="true" signature="2755:2852" placeholder="UPDATE user " />
+                <marker date="1466171680144" expanded="true" signature="3047:3092" placeholder="SELECT user.... user" />
+                <marker date="1466171680144" expanded="true" signature="3396:3414" placeholder="SELECT * FRO... user" />
+                <marker date="1466171680144" expanded="true" signature="3773:3831" placeholder="INSERT INTO user... " />
+                <marker date="1466171680144" expanded="true" signature="3773:3862" placeholder="INSERT INTO user... " />
+                <marker date="1466171680144" expanded="true" signature="3832:3862" placeholder="UPDATE Col1=... " />
+                <marker date="1466171680144" expanded="true" signature="4124:4201" placeholder="INSERT INTO user... " />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -67,18 +94,23 @@
       <file leaf-file-name="Play.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/models/Play.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2329">
-              <caret line="137" column="16" selection-start-line="137" selection-start-column="16" selection-end-line="137" selection-end-column="16" />
+            <state relative-caret-position="376">
+              <caret line="142" column="44" selection-start-line="142" selection-start-column="44" selection-end-line="142" selection-end-column="44" />
               <folding>
-                <marker date="1466079326915" expanded="true" signature="370:419" placeholder="INSERT INTO `play`... " />
-                <marker date="1466079326915" expanded="true" signature="645:698" placeholder="SELECT tourn... play" />
-                <marker date="1466079326915" expanded="true" signature="994:1012" placeholder="SELECT * FRO... team" />
-                <marker date="1466079326915" expanded="true" signature="1313:1363" placeholder="SELECT id,te... play" />
-                <marker date="1466079326915" expanded="true" signature="1975:2052" placeholder="UPDATE `play... " />
-                <marker date="1466079326915" expanded="true" signature="2317:2330" placeholder="SELECT * FRO... " />
-                <marker date="1466079326915" expanded="true" signature="2317:2357" placeholder="SELECT * FRO... play" />
-                <marker date="1466079326915" expanded="true" signature="2317:2358" placeholder="SELECT * FRO... play" />
-                <marker date="1466079326915" expanded="true" signature="5027:5101" placeholder="INSERT INTO `order play`... " />
+                <marker date="1466171050351" expanded="true" signature="370:419" placeholder="INSERT INTO `play`... " />
+                <marker date="1466171050351" expanded="true" signature="645:698" placeholder="SELECT tourn... play" />
+                <marker date="1466171050351" expanded="true" signature="997:1047" placeholder="SELECT id,te... play" />
+                <marker date="1466171050351" expanded="true" signature="1659:1736" placeholder="UPDATE `play... " />
+                <marker date="1466171050351" expanded="true" signature="2001:2014" placeholder="SELECT * FRO... " />
+                <marker date="1466171050351" expanded="true" signature="2001:2041" placeholder="SELECT * FRO... play" />
+                <marker date="1466171050351" expanded="true" signature="2001:2042" placeholder="SELECT * FRO... play" />
+                <marker date="1466171050351" expanded="true" signature="2355:2402" placeholder="SELECT * FRO... play" />
+                <marker date="1466171050351" expanded="true" signature="5297:5371" placeholder="INSERT INTO `order play`... " />
+                <marker date="1466171050351" expanded="true" signature="5615:5692" placeholder="INSERT INTO `order play`... " />
+                <marker date="1466171050351" expanded="true" signature="5615:5693" placeholder="INSERT INTO `order play`... " />
+                <marker date="1466171050351" expanded="true" signature="5900:5970" placeholder="SELECT winne... order play" />
+                <marker date="1466171050351" expanded="true" signature="5900:6048" placeholder="SELECT winne... order play" />
+                <marker date="1466171050351" expanded="true" signature="5900:6182" placeholder="SELECT winne... order play" />
               </folding>
             </state>
           </provider>
@@ -87,17 +119,33 @@
       <file leaf-file-name="Tournament.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/models/Tournament.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="410">
-              <caret line="38" column="43" selection-start-line="38" selection-start-column="20" selection-end-line="38" selection-end-column="43" />
+            <state relative-caret-position="342">
+              <caret line="67" column="79" selection-start-line="67" selection-start-column="79" selection-end-line="67" selection-end-column="79" />
               <folding>
-                <marker date="1466084486604" expanded="true" signature="206:310" placeholder="INSERT into tournament... " />
-                <marker date="1466084486604" expanded="true" signature="660:684" placeholder="SELECT * FRO... tournament" />
-                <marker date="1466084486604" expanded="true" signature="976:1019" placeholder="SELECT * FRO... tournament" />
-                <marker date="1466084486604" expanded="true" signature="1313:1356" placeholder="SELECT * FRO... tournament" />
-                <marker date="1466084486604" expanded="true" signature="1645:1680" placeholder="SELECT * FRO... tournament" />
-                <marker date="1466084486604" expanded="true" signature="1645:1681" placeholder="SELECT * FRO... tournament" />
-                <marker date="1466084486604" expanded="true" signature="2013:2066" placeholder="UPDATE `play... " />
-                <marker date="1466084486604" expanded="true" signature="2013:2067" placeholder="UPDATE `play... " />
+                <marker date="1466158618395" expanded="true" signature="206:310" placeholder="INSERT into tournament... " />
+                <marker date="1466158618395" expanded="true" signature="660:684" placeholder="SELECT * FRO... tournament" />
+                <marker date="1466158618395" expanded="true" signature="976:1019" placeholder="SELECT * FRO... tournament" />
+                <marker date="1466158618395" expanded="true" signature="1313:1356" placeholder="SELECT * FRO... tournament" />
+                <marker date="1466158618395" expanded="true" signature="1645:1680" placeholder="SELECT * FRO... tournament" />
+                <marker date="1466158618395" expanded="true" signature="1645:1681" placeholder="SELECT * FRO... tournament" />
+                <marker date="1466158618395" expanded="true" signature="2013:2066" placeholder="UPDATE `play... " />
+                <marker date="1466158618395" expanded="true" signature="2013:2067" placeholder="UPDATE `play... " />
+                <marker date="1466158618395" expanded="true" signature="2287:2329" placeholder="UPDATE tourn... " />
+                <marker date="1466158618395" expanded="true" signature="2545:2581" placeholder="SELECT team tournament" />
+                <marker date="1466158618395" expanded="true" signature="2545:2608" placeholder="SELECT * FRO... tournament" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Team.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/models/Team.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="487">
+              <caret line="30" column="5" selection-start-line="22" selection-start-column="4" selection-end-line="30" selection-end-column="5" />
+              <folding>
+                <marker date="1465987469146" expanded="true" signature="271:358" placeholder="INSERT into team... " />
+                <marker date="1465987469146" expanded="true" signature="705:723" placeholder="SELECT * FRO... team" />
               </folding>
             </state>
           </provider>
@@ -106,8 +154,8 @@
       <file leaf-file-name="index.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/style/index.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="449">
-              <caret line="283" column="13" selection-start-line="283" selection-start-column="13" selection-end-line="283" selection-end-column="13" />
+            <state relative-caret-position="268">
+              <caret line="260" column="17" selection-start-line="260" selection-start-column="17" selection-end-line="260" selection-end-column="17" />
               <folding />
             </state>
           </provider>
@@ -129,10 +177,8 @@
         <option value="$PROJECT_DIR$/config/Autoload.php" />
         <option value="$PROJECT_DIR$/controllers/accountController.php" />
         <option value="$PROJECT_DIR$/controllers/authController.php" />
-        <option value="$PROJECT_DIR$/registration.php" />
         <option value="$PROJECT_DIR$/main.php" />
         <option value="$PROJECT_DIR$/index.php" />
-        <option value="$PROJECT_DIR$/models/User.php" />
         <option value="$PROJECT_DIR$/models/Auth.php" />
         <option value="$PROJECT_DIR$/account.php" />
         <option value="$PROJECT_DIR$/editTournament.php" />
@@ -142,11 +188,14 @@
         <option value="$PROJECT_DIR$/models/Round.php" />
         <option value="$PROJECT_DIR$/models/Team.php" />
         <option value="$PROJECT_DIR$/tournament.php" />
-        <option value="$PROJECT_DIR$/models/Play.php" />
-        <option value="$PROJECT_DIR$/controllers/creatTournamentController.php" />
-        <option value="$PROJECT_DIR$/models/Tournament.php" />
+        <option value="$PROJECT_DIR$/registration.php" />
+        <option value="$PROJECT_DIR$/controllers/registrationController.php" />
         <option value="$PROJECT_DIR$/style/index.css" />
         <option value="$PROJECT_DIR$/creatTournament.php" />
+        <option value="$PROJECT_DIR$/models/Tournament.php" />
+        <option value="$PROJECT_DIR$/models/Play.php" />
+        <option value="$PROJECT_DIR$/models/User.php" />
+        <option value="$PROJECT_DIR$/controllers/creatTournamentController.php" />
       </list>
     </option>
   </component>
@@ -190,7 +239,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -237,9 +286,23 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LA-TT" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LA-TT" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controllers" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -296,11 +359,12 @@
       <workItem from="1465965794647" duration="6826000" />
       <workItem from="1465985125758" duration="12400000" />
       <workItem from="1466056725584" duration="27022000" />
+      <workItem from="1466143039602" duration="19414000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="70410000" />
+    <option name="totallyTimeSpent" value="89824000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -354,15 +418,20 @@
         <state relative-caret-position="782">
           <caret line="46" column="1" selection-start-line="46" selection-start-column="1" selection-end-line="46" selection-end-column="1" />
           <folding>
-            <marker date="1466079326915" expanded="true" signature="370:419" placeholder="INSERT INTO `play`... " />
-            <marker date="1466079326915" expanded="true" signature="645:698" placeholder="SELECT tourn... play" />
-            <marker date="1466079326915" expanded="true" signature="994:1012" placeholder="SELECT * FRO... team" />
-            <marker date="1466079326915" expanded="true" signature="1313:1363" placeholder="SELECT id,te... play" />
-            <marker date="1466079326915" expanded="true" signature="1975:2052" placeholder="UPDATE `play... " />
-            <marker date="1466079326915" expanded="true" signature="2317:2330" placeholder="SELECT * FRO... " />
-            <marker date="1466079326915" expanded="true" signature="2317:2357" placeholder="SELECT * FRO... play" />
-            <marker date="1466079326915" expanded="true" signature="2317:2358" placeholder="SELECT * FRO... play" />
-            <marker date="1466079326915" expanded="true" signature="5027:5101" placeholder="INSERT INTO `order play`... " />
+            <marker date="1466171050351" expanded="true" signature="370:419" placeholder="INSERT INTO `play`... " />
+            <marker date="1466171050351" expanded="true" signature="645:698" placeholder="SELECT tourn... play" />
+            <marker date="1466171050351" expanded="true" signature="997:1047" placeholder="SELECT id,te... play" />
+            <marker date="1466171050351" expanded="true" signature="1659:1736" placeholder="UPDATE `play... " />
+            <marker date="1466171050351" expanded="true" signature="2001:2014" placeholder="SELECT * FRO... " />
+            <marker date="1466171050351" expanded="true" signature="2001:2041" placeholder="SELECT * FRO... play" />
+            <marker date="1466171050351" expanded="true" signature="2001:2042" placeholder="SELECT * FRO... play" />
+            <marker date="1466171050351" expanded="true" signature="2355:2402" placeholder="SELECT * FRO... play" />
+            <marker date="1466171050351" expanded="true" signature="5297:5371" placeholder="INSERT INTO `order play`... " />
+            <marker date="1466171050351" expanded="true" signature="5615:5692" placeholder="INSERT INTO `order play`... " />
+            <marker date="1466171050351" expanded="true" signature="5615:5693" placeholder="INSERT INTO `order play`... " />
+            <marker date="1466171050351" expanded="true" signature="5900:5970" placeholder="SELECT winne... order play" />
+            <marker date="1466171050351" expanded="true" signature="5900:6048" placeholder="SELECT winne... order play" />
+            <marker date="1466171050351" expanded="true" signature="5900:6182" placeholder="SELECT winne... order play" />
           </folding>
         </state>
       </provider>
@@ -373,14 +442,20 @@
           <caret line="177" column="81" selection-start-line="177" selection-start-column="31" selection-end-line="177" selection-end-column="81" />
           <folding>
             <element signature="n#style#0;n#div#2;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#form#0;n#div#0;n#div#2;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#form#0;n#div#0;n#div#2;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#form#0;n#div#0;n#div#2;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#form#0;n#div#1;n#div#2;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#form#0;n#div#1;n#div#2;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#form#0;n#div#1;n#div#2;n#!!top" expanded="true" />
-            <marker date="1466085071561" expanded="true" signature="8527:8545" placeholder="..." />
-            <marker date="1466085071561" expanded="true" signature="13069:13087" placeholder="..." />
+            <element signature="n#style#0;n#div#0;n#div#2;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#2;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#form#0;n#div#0;n#div#0;n#div#2;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#2;n#form#0;n#div#0;n#div#0;n#div#2;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#div#1;n#div#0;n#form#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#2;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#2;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#div#2;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#select#0;n#div#1;n#div#1;n#form#0;n#div#0;n#div#1;n#div#2;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#form#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#2;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#2;n#div#2;n#!!top" expanded="true" />
+            <marker date="1466158003750" expanded="false" signature="1563:1582" placeholder="..." />
+            <marker date="1466158003750" expanded="true" signature="8654:8672" placeholder="..." />
+            <marker date="1466158003750" expanded="true" signature="13395:13413" placeholder="..." />
+            <marker date="1466158003750" expanded="true" signature="13683:13717" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -398,15 +473,20 @@
         <state relative-caret-position="0">
           <caret line="43" column="24" selection-start-line="43" selection-start-column="24" selection-end-line="43" selection-end-column="24" />
           <folding>
-            <marker date="1466079326915" expanded="true" signature="370:419" placeholder="INSERT INTO `play`... " />
-            <marker date="1466079326915" expanded="true" signature="645:698" placeholder="SELECT tourn... play" />
-            <marker date="1466079326915" expanded="true" signature="994:1012" placeholder="SELECT * FRO... team" />
-            <marker date="1466079326915" expanded="true" signature="1313:1363" placeholder="SELECT id,te... play" />
-            <marker date="1466079326915" expanded="true" signature="1975:2052" placeholder="UPDATE `play... " />
-            <marker date="1466079326915" expanded="true" signature="2317:2330" placeholder="SELECT * FRO... " />
-            <marker date="1466079326915" expanded="true" signature="2317:2357" placeholder="SELECT * FRO... play" />
-            <marker date="1466079326915" expanded="true" signature="2317:2358" placeholder="SELECT * FRO... play" />
-            <marker date="1466079326915" expanded="true" signature="5027:5101" placeholder="INSERT INTO `order play`... " />
+            <marker date="1466171050351" expanded="true" signature="370:419" placeholder="INSERT INTO `play`... " />
+            <marker date="1466171050351" expanded="true" signature="645:698" placeholder="SELECT tourn... play" />
+            <marker date="1466171050351" expanded="true" signature="997:1047" placeholder="SELECT id,te... play" />
+            <marker date="1466171050351" expanded="true" signature="1659:1736" placeholder="UPDATE `play... " />
+            <marker date="1466171050351" expanded="true" signature="2001:2014" placeholder="SELECT * FRO... " />
+            <marker date="1466171050351" expanded="true" signature="2001:2041" placeholder="SELECT * FRO... play" />
+            <marker date="1466171050351" expanded="true" signature="2001:2042" placeholder="SELECT * FRO... play" />
+            <marker date="1466171050351" expanded="true" signature="2355:2402" placeholder="SELECT * FRO... play" />
+            <marker date="1466171050351" expanded="true" signature="5297:5371" placeholder="INSERT INTO `order play`... " />
+            <marker date="1466171050351" expanded="true" signature="5615:5692" placeholder="INSERT INTO `order play`... " />
+            <marker date="1466171050351" expanded="true" signature="5615:5693" placeholder="INSERT INTO `order play`... " />
+            <marker date="1466171050351" expanded="true" signature="5900:5970" placeholder="SELECT winne... order play" />
+            <marker date="1466171050351" expanded="true" signature="5900:6048" placeholder="SELECT winne... order play" />
+            <marker date="1466171050351" expanded="true" signature="5900:6182" placeholder="SELECT winne... order play" />
           </folding>
         </state>
       </provider>
@@ -415,7 +495,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="26" column="25" selection-start-line="0" selection-start-column="0" selection-end-line="31" selection-end-column="1" />
-          <folding />
+          <folding>
+            <marker date="1465987469146" expanded="true" signature="271:358" placeholder="INSERT into team... " />
+            <marker date="1465987469146" expanded="true" signature="705:723" placeholder="SELECT * FRO... team" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -441,14 +524,20 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="n#style#0;n#div#2;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#form#0;n#div#0;n#div#2;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#form#0;n#div#0;n#div#2;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#form#0;n#div#0;n#div#2;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#form#0;n#div#1;n#div#2;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#form#0;n#div#1;n#div#2;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#form#0;n#div#1;n#div#2;n#!!top" expanded="true" />
-            <marker date="1466085071561" expanded="true" signature="8527:8545" placeholder="..." />
-            <marker date="1466085071561" expanded="true" signature="13069:13087" placeholder="..." />
+            <element signature="n#style#0;n#div#0;n#div#2;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#2;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#form#0;n#div#0;n#div#0;n#div#2;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#2;n#form#0;n#div#0;n#div#0;n#div#2;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#div#1;n#div#0;n#form#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#2;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#2;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#div#2;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#select#0;n#div#1;n#div#1;n#form#0;n#div#0;n#div#1;n#div#2;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#form#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#2;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#2;n#div#2;n#!!top" expanded="true" />
+            <marker date="1466158003750" expanded="false" signature="1563:1582" placeholder="..." />
+            <marker date="1466158003750" expanded="true" signature="8654:8672" placeholder="..." />
+            <marker date="1466158003750" expanded="true" signature="13395:13413" placeholder="..." />
+            <marker date="1466158003750" expanded="true" signature="13683:13717" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -457,7 +546,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="9" column="22" selection-start-line="9" selection-start-column="22" selection-end-line="9" selection-end-column="22" />
-          <folding />
+          <folding>
+            <marker date="1465987469146" expanded="true" signature="271:358" placeholder="INSERT into team... " />
+            <marker date="1465987469146" expanded="true" signature="705:723" placeholder="SELECT * FRO... team" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -482,14 +574,17 @@
         <state relative-caret-position="0">
           <caret line="3" column="16" selection-start-line="0" selection-start-column="0" selection-end-line="29" selection-end-column="1" />
           <folding>
-            <marker date="1466084486604" expanded="true" signature="206:310" placeholder="INSERT into tournament... " />
-            <marker date="1466084486604" expanded="true" signature="660:684" placeholder="SELECT * FRO... tournament" />
-            <marker date="1466084486604" expanded="true" signature="976:1019" placeholder="SELECT * FRO... tournament" />
-            <marker date="1466084486604" expanded="true" signature="1313:1356" placeholder="SELECT * FRO... tournament" />
-            <marker date="1466084486604" expanded="true" signature="1645:1680" placeholder="SELECT * FRO... tournament" />
-            <marker date="1466084486604" expanded="true" signature="1645:1681" placeholder="SELECT * FRO... tournament" />
-            <marker date="1466084486604" expanded="true" signature="2013:2066" placeholder="UPDATE `play... " />
-            <marker date="1466084486604" expanded="true" signature="2013:2067" placeholder="UPDATE `play... " />
+            <marker date="1466158618395" expanded="true" signature="206:310" placeholder="INSERT into tournament... " />
+            <marker date="1466158618395" expanded="true" signature="660:684" placeholder="SELECT * FRO... tournament" />
+            <marker date="1466158618395" expanded="true" signature="976:1019" placeholder="SELECT * FRO... tournament" />
+            <marker date="1466158618395" expanded="true" signature="1313:1356" placeholder="SELECT * FRO... tournament" />
+            <marker date="1466158618395" expanded="true" signature="1645:1680" placeholder="SELECT * FRO... tournament" />
+            <marker date="1466158618395" expanded="true" signature="1645:1681" placeholder="SELECT * FRO... tournament" />
+            <marker date="1466158618395" expanded="true" signature="2013:2066" placeholder="UPDATE `play... " />
+            <marker date="1466158618395" expanded="true" signature="2013:2067" placeholder="UPDATE `play... " />
+            <marker date="1466158618395" expanded="true" signature="2287:2329" placeholder="UPDATE tourn... " />
+            <marker date="1466158618395" expanded="true" signature="2545:2581" placeholder="SELECT team tournament" />
+            <marker date="1466158618395" expanded="true" signature="2545:2608" placeholder="SELECT * FRO... tournament" />
           </folding>
         </state>
       </provider>
@@ -536,14 +631,20 @@
           <caret line="13" column="1" selection-start-line="0" selection-start-column="0" selection-end-line="34" selection-end-column="7" />
           <folding>
             <element signature="n#style#0;n#div#2;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#form#0;n#div#0;n#div#2;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#form#0;n#div#0;n#div#2;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#form#0;n#div#0;n#div#2;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#form#0;n#div#1;n#div#2;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#form#0;n#div#1;n#div#2;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#form#0;n#div#1;n#div#2;n#!!top" expanded="true" />
-            <marker date="1466085071561" expanded="true" signature="8527:8545" placeholder="..." />
-            <marker date="1466085071561" expanded="true" signature="13069:13087" placeholder="..." />
+            <element signature="n#style#0;n#div#0;n#div#2;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#2;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#form#0;n#div#0;n#div#0;n#div#2;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#2;n#form#0;n#div#0;n#div#0;n#div#2;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#div#1;n#div#0;n#form#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#2;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#2;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#div#2;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#select#0;n#div#1;n#div#1;n#form#0;n#div#0;n#div#1;n#div#2;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#form#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#2;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#2;n#div#2;n#!!top" expanded="true" />
+            <marker date="1466158003750" expanded="false" signature="1563:1582" placeholder="..." />
+            <marker date="1466158003750" expanded="true" signature="8654:8672" placeholder="..." />
+            <marker date="1466158003750" expanded="true" signature="13395:13413" placeholder="..." />
+            <marker date="1466158003750" expanded="true" signature="13683:13717" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -598,13 +699,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/controllers/registrationController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/controllers/logoutController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -619,20 +713,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/models/Comments.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="25" column="9" selection-start-line="20" selection-start-column="7" selection-end-line="25" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/registration.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="3" column="35" selection-start-line="3" selection-start-column="35" selection-end-line="3" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/models/Comments.php" />
     <entry file="file://$PROJECT_DIR$/controllers/authController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -703,13 +784,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/models/User.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="50" column="14" selection-start-line="0" selection-start-column="0" selection-end-line="87" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/models/Validation.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -730,14 +804,57 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
           <caret line="16" column="2" selection-start-line="16" selection-start-column="2" selection-end-line="16" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/registration.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="34" column="45" selection-start-line="34" selection-start-column="45" selection-end-line="34" selection-end-column="45" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controllers/registrationController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="28" column="70" selection-start-line="28" selection-start-column="70" selection-end-line="28" selection-end-column="70" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/style/index.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="268">
+          <caret line="260" column="17" selection-start-line="260" selection-start-column="17" selection-end-line="260" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/Tournament.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="67" column="79" selection-start-line="67" selection-start-column="79" selection-end-line="67" selection-end-column="79" />
+          <folding>
+            <marker date="1466158618395" expanded="true" signature="206:310" placeholder="INSERT into tournament... " />
+            <marker date="1466158618395" expanded="true" signature="660:684" placeholder="SELECT * FRO... tournament" />
+            <marker date="1466158618395" expanded="true" signature="976:1019" placeholder="SELECT * FRO... tournament" />
+            <marker date="1466158618395" expanded="true" signature="1313:1356" placeholder="SELECT * FRO... tournament" />
+            <marker date="1466158618395" expanded="true" signature="1645:1680" placeholder="SELECT * FRO... tournament" />
+            <marker date="1466158618395" expanded="true" signature="1645:1681" placeholder="SELECT * FRO... tournament" />
+            <marker date="1466158618395" expanded="true" signature="2013:2066" placeholder="UPDATE `play... " />
+            <marker date="1466158618395" expanded="true" signature="2013:2067" placeholder="UPDATE `play... " />
+            <marker date="1466158618395" expanded="true" signature="2287:2329" placeholder="UPDATE tourn... " />
+            <marker date="1466158618395" expanded="true" signature="2545:2581" placeholder="SELECT team tournament" />
+            <marker date="1466158618395" expanded="true" signature="2545:2608" placeholder="SELECT * FRO... tournament" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/models/Team.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="62">
-          <caret line="5" column="18" selection-start-line="5" selection-start-column="18" selection-end-line="5" selection-end-column="18" />
+        <state relative-caret-position="487">
+          <caret line="30" column="5" selection-start-line="22" selection-start-column="4" selection-end-line="30" selection-end-column="5" />
           <folding>
             <marker date="1465987469146" expanded="true" signature="271:358" placeholder="INSERT into team... " />
             <marker date="1465987469146" expanded="true" signature="705:723" placeholder="SELECT * FRO... team" />
@@ -745,72 +862,79 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/creatTournament.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="458">
+          <caret line="241" column="39" selection-start-line="241" selection-start-column="39" selection-end-line="241" selection-end-column="39" />
+          <folding>
+            <element signature="n#style#0;n#div#2;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#2;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#2;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#form#0;n#div#0;n#div#0;n#div#2;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#2;n#form#0;n#div#0;n#div#0;n#div#2;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#div#1;n#div#0;n#form#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#2;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#2;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#div#2;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#select#0;n#div#1;n#div#1;n#form#0;n#div#0;n#div#1;n#div#2;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#form#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#2;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#2;n#div#2;n#!!top" expanded="true" />
+            <marker date="1466158003750" expanded="false" signature="1563:1582" placeholder="..." />
+            <marker date="1466158003750" expanded="true" signature="8654:8672" placeholder="..." />
+            <marker date="1466158003750" expanded="true" signature="13395:13413" placeholder="..." />
+            <marker date="1466158003750" expanded="true" signature="13683:13717" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/models/Play.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2329">
-          <caret line="137" column="16" selection-start-line="137" selection-start-column="16" selection-end-line="137" selection-end-column="16" />
+        <state relative-caret-position="376">
+          <caret line="142" column="44" selection-start-line="142" selection-start-column="44" selection-end-line="142" selection-end-column="44" />
           <folding>
-            <marker date="1466079326915" expanded="true" signature="370:419" placeholder="INSERT INTO `play`... " />
-            <marker date="1466079326915" expanded="true" signature="645:698" placeholder="SELECT tourn... play" />
-            <marker date="1466079326915" expanded="true" signature="994:1012" placeholder="SELECT * FRO... team" />
-            <marker date="1466079326915" expanded="true" signature="1313:1363" placeholder="SELECT id,te... play" />
-            <marker date="1466079326915" expanded="true" signature="1975:2052" placeholder="UPDATE `play... " />
-            <marker date="1466079326915" expanded="true" signature="2317:2330" placeholder="SELECT * FRO... " />
-            <marker date="1466079326915" expanded="true" signature="2317:2357" placeholder="SELECT * FRO... play" />
-            <marker date="1466079326915" expanded="true" signature="2317:2358" placeholder="SELECT * FRO... play" />
-            <marker date="1466079326915" expanded="true" signature="5027:5101" placeholder="INSERT INTO `order play`... " />
+            <marker date="1466171050351" expanded="true" signature="370:419" placeholder="INSERT INTO `play`... " />
+            <marker date="1466171050351" expanded="true" signature="645:698" placeholder="SELECT tourn... play" />
+            <marker date="1466171050351" expanded="true" signature="997:1047" placeholder="SELECT id,te... play" />
+            <marker date="1466171050351" expanded="true" signature="1659:1736" placeholder="UPDATE `play... " />
+            <marker date="1466171050351" expanded="true" signature="2001:2014" placeholder="SELECT * FRO... " />
+            <marker date="1466171050351" expanded="true" signature="2001:2041" placeholder="SELECT * FRO... play" />
+            <marker date="1466171050351" expanded="true" signature="2001:2042" placeholder="SELECT * FRO... play" />
+            <marker date="1466171050351" expanded="true" signature="2355:2402" placeholder="SELECT * FRO... play" />
+            <marker date="1466171050351" expanded="true" signature="5297:5371" placeholder="INSERT INTO `order play`... " />
+            <marker date="1466171050351" expanded="true" signature="5615:5692" placeholder="INSERT INTO `order play`... " />
+            <marker date="1466171050351" expanded="true" signature="5615:5693" placeholder="INSERT INTO `order play`... " />
+            <marker date="1466171050351" expanded="true" signature="5900:5970" placeholder="SELECT winne... order play" />
+            <marker date="1466171050351" expanded="true" signature="5900:6048" placeholder="SELECT winne... order play" />
+            <marker date="1466171050351" expanded="true" signature="5900:6182" placeholder="SELECT winne... order play" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/User.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="461">
+          <caret line="100" column="66" selection-start-line="100" selection-start-column="66" selection-end-line="100" selection-end-column="66" />
+          <folding>
+            <marker date="1466171680144" expanded="true" signature="511:645" placeholder="INSERT into user... " />
+            <marker date="1466171680144" expanded="true" signature="984:1062" placeholder="INSERT into image... " />
+            <marker date="1466171680144" expanded="true" signature="1354:1401" placeholder="SELECT * FRO... user" />
+            <marker date="1466171680144" expanded="true" signature="1782:1957" placeholder="SELECT user.... user" />
+            <marker date="1466171680144" expanded="true" signature="2261:2296" placeholder="SELECT * FRO... user" />
+            <marker date="1466171680144" expanded="true" signature="2755:2852" placeholder="UPDATE user " />
+            <marker date="1466171680144" expanded="true" signature="3047:3092" placeholder="SELECT user.... user" />
+            <marker date="1466171680144" expanded="true" signature="3396:3414" placeholder="SELECT * FRO... user" />
+            <marker date="1466171680144" expanded="true" signature="3773:3831" placeholder="INSERT INTO user... " />
+            <marker date="1466171680144" expanded="true" signature="3773:3862" placeholder="INSERT INTO user... " />
+            <marker date="1466171680144" expanded="true" signature="3832:3862" placeholder="UPDATE Col1=... " />
+            <marker date="1466171680144" expanded="true" signature="4124:4201" placeholder="INSERT INTO user... " />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/controllers/creatTournamentController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="274">
-          <caret line="66" column="54" selection-start-line="66" selection-start-column="54" selection-end-line="66" selection-end-column="54" />
+        <state relative-caret-position="631">
+          <caret line="166" column="0" selection-start-line="166" selection-start-column="0" selection-end-line="166" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/style/index.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="449">
-          <caret line="283" column="13" selection-start-line="283" selection-start-column="13" selection-end-line="283" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/models/Tournament.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="410">
-          <caret line="38" column="43" selection-start-line="38" selection-start-column="20" selection-end-line="38" selection-end-column="43" />
-          <folding>
-            <marker date="1466084486604" expanded="true" signature="206:310" placeholder="INSERT into tournament... " />
-            <marker date="1466084486604" expanded="true" signature="660:684" placeholder="SELECT * FRO... tournament" />
-            <marker date="1466084486604" expanded="true" signature="976:1019" placeholder="SELECT * FRO... tournament" />
-            <marker date="1466084486604" expanded="true" signature="1313:1356" placeholder="SELECT * FRO... tournament" />
-            <marker date="1466084486604" expanded="true" signature="1645:1680" placeholder="SELECT * FRO... tournament" />
-            <marker date="1466084486604" expanded="true" signature="1645:1681" placeholder="SELECT * FRO... tournament" />
-            <marker date="1466084486604" expanded="true" signature="2013:2066" placeholder="UPDATE `play... " />
-            <marker date="1466084486604" expanded="true" signature="2013:2067" placeholder="UPDATE `play... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/creatTournament.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="182" column="84" selection-start-line="182" selection-start-column="84" selection-end-line="182" selection-end-column="84" />
-          <folding>
-            <element signature="n#style#0;n#div#2;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#form#0;n#div#0;n#div#2;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#form#0;n#div#0;n#div#2;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#form#0;n#div#0;n#div#2;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#form#0;n#div#1;n#div#2;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#form#0;n#div#1;n#div#2;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#form#0;n#div#1;n#div#2;n#!!top" expanded="true" />
-            <marker date="1466085071561" expanded="true" signature="8527:8545" placeholder="..." />
-            <marker date="1466085071561" expanded="true" signature="13069:13087" placeholder="..." />
-          </folding>
         </state>
       </provider>
     </entry>

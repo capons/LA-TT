@@ -32,7 +32,7 @@ require_once ("Layout/header.php");
         </div>
         <div class="form-i">
             <div class="f-span">
-                <span class="text-c">Email</span>
+                <span class="text-c">Password</span>
             </div>
             <div class="f-input">
                 <input  type="password" name="r_pass" placeholder="Password" required>
